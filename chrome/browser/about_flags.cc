@@ -12119,13 +12119,13 @@ const FeatureEntry kFeatureEntries[] = {
      flag_descriptions::kBrowsingHistoryActorIntegrationM3Description,
      kOsDesktop,
      FEATURE_VALUE_TYPE(history::kBrowsingHistoryActorIntegrationM3)},
+#endif  // !BUILDFLAG(IS_ANDROID)
 
     {"browsing-history-similar-visits-grouping",
      flag_descriptions::kBrowsingHistorySimilarVisitsGroupingName,
      flag_descriptions::kBrowsingHistorySimilarVisitsGroupingDescription,
-     kOsDesktop,
+     kOsDesktop | kOsAndroid,
      FEATURE_VALUE_TYPE(history::kBrowsingHistorySimilarVisitsGrouping)},
-#endif  // !BUILDFLAG(IS_ANDROID)
 
 #if BUILDFLAG(IS_ANDROID)
     {"incognito-theme-overlay-testing",
@@ -13166,6 +13166,10 @@ const FeatureEntry kFeatureEntries[] = {
      FEATURE_VALUE_TYPE(blink::features::kGlobalPrivacyControlForce)},
 
 #if BUILDFLAG(IS_ANDROID)
+    {"android-before-unload-support",
+     flag_descriptions::kAndroidBeforeUnloadSupportName,
+     flag_descriptions::kAndroidBeforeUnloadSupportDescription, kOsAndroid,
+     FEATURE_VALUE_TYPE(chrome::android::kAndroidBeforeUnloadSupport)},
     {"android-bottom-bar", flag_descriptions::kAndroidBottomBarName,
      flag_descriptions::kAndroidBottomBarDescription, kOsAndroid,
      FEATURE_WITH_PARAMS_VALUE_TYPE(chrome::android::kAndroidBottomBar,

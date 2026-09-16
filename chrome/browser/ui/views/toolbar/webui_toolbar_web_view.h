@@ -245,6 +245,9 @@ class WebUIToolbarWebView
           OnPageActionChipShowingChangedCallback callback) override;
   void OnPageInitialized() override;
   void InvokePinnedToolbarAction(
+      toolbar_ui_api::mojom::PinnedToolbarAction action_id,
+      bool is_pointer_interaction) override;
+  void OnPinnedToolbarActionPointerDown(
       toolbar_ui_api::mojom::PinnedToolbarAction action_id) override;
   void OnLocationBarFocusWithinChanged(bool focused) override;
   void MovePinnedToolbarAction(
@@ -277,7 +280,8 @@ class WebUIToolbarWebView
   void OnToolbarDropFile(const gfx::PointF& drop_position) override;
   base::expected<std::monostate, mojo_base::mojom::ErrorPtr> OnOmniboxAction(
       toolbar_ui_api::mojom::OmniboxActionPtr action) override;
-  void ShowAvatarMenu() override;
+  void ShowAvatarMenu(bool is_pointer_interaction) override;
+  void OnAvatarButtonMousePressed() override;
   void SetAvatarButtonHovered(bool hovered) override;
   void SetAvatarButtonFocused(bool focused) override;
   void SetAvatarButtonIPHPromoShowing(bool showing) override;

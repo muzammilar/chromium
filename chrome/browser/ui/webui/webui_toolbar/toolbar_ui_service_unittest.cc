@@ -271,9 +271,20 @@ TEST_F(ToolbarUIServiceSplitTabsTest, TestOnPageInitializedDelegates) {
 // Tests that calling InvokePinnedToolbarAction() calls the delegate.
 TEST_F(ToolbarUIServiceTest, TestInvokePinnedToolbarAction) {
   EXPECT_CALL(delegate(),
-              InvokePinnedToolbarAction(mojom::PinnedToolbarAction::kPrint));
+              InvokePinnedToolbarAction(mojom::PinnedToolbarAction::kPrint,
+                                        /*is_pointer_interaction=*/true));
 
-  service().InvokePinnedToolbarAction(mojom::PinnedToolbarAction::kPrint);
+  service().InvokePinnedToolbarAction(mojom::PinnedToolbarAction::kPrint,
+                                      /*is_pointer_interaction=*/true);
+}
+
+// Tests that calling OnPinnedToolbarActionPointerDown() calls the delegate.
+TEST_F(ToolbarUIServiceTest, TestOnPinnedToolbarActionPointerDown) {
+  EXPECT_CALL(delegate(), OnPinnedToolbarActionPointerDown(
+                              mojom::PinnedToolbarAction::kPrint));
+
+  service().OnPinnedToolbarActionPointerDown(
+      mojom::PinnedToolbarAction::kPrint);
 }
 
 TEST_F(ToolbarUIServiceTest, IconUpdates) {
@@ -401,9 +412,16 @@ TEST_F(ToolbarUIServiceNoInitialObserverTest, IconUpdatesBeforeConnect2) {
 
 // Tests that calling ShowAvatarMenu() calls the delegate.
 TEST_F(ToolbarUIServiceTest, TestShowAvatarMenu) {
-  EXPECT_CALL(delegate(), ShowAvatarMenu());
+  EXPECT_CALL(delegate(), ShowAvatarMenu(true));
 
-  service().ShowAvatarMenu(base::DoNothing());
+  service().ShowAvatarMenu(/*is_pointer_interaction=*/true, base::DoNothing());
+}
+
+// Tests that calling OnAvatarButtonMousePressed() calls the delegate.
+TEST_F(ToolbarUIServiceTest, TestOnAvatarButtonMousePressed) {
+  EXPECT_CALL(delegate(), OnAvatarButtonMousePressed());
+
+  service().OnAvatarButtonMousePressed();
 }
 
 }  // namespace

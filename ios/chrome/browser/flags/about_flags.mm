@@ -1293,11 +1293,6 @@ constexpr FeatureEntry::FeatureVariation
 //
 // When adding a new choice, add it to the end of the list.
 constexpr auto kFeatureEntries = std::to_array<flags_ui::FeatureEntry>({
-    {"build-external-privacy-context",
-     flag_descriptions::kBuildExternalPrivacyContextName,
-     flag_descriptions::kBuildExternalPrivacyContextDescription,
-     flags_ui::kOsIos,
-     FEATURE_VALUE_TYPE(switches::kBuildExternalPrivacyContext)},
     {"in-product-help-demo-mode-choice",
      flag_descriptions::kInProductHelpDemoModeName,
      flag_descriptions::kInProductHelpDemoModeDescription, flags_ui::kOsIos,
@@ -2793,6 +2788,11 @@ constexpr auto kFeatureEntries = std::to_array<flags_ui::FeatureEntry>({
      flag_descriptions::kBrowsingHistoryFilterByDeviceDescription,
      flags_ui::kOsIos,
      FEATURE_VALUE_TYPE(history::kBrowsingHistoryFilterByDevice)},
+    {"browsing-history-similar-visits-grouping",
+     flag_descriptions::kBrowsingHistorySimilarVisitsGroupingName,
+     flag_descriptions::kBrowsingHistorySimilarVisitsGroupingDescription,
+     flags_ui::kOsIos,
+     FEATURE_VALUE_TYPE(history::kBrowsingHistorySimilarVisitsGrouping)},
 });
 
 bool SkipConditionalFeatureEntry(const flags_ui::FeatureEntry& entry) {

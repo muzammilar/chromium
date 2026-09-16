@@ -829,8 +829,14 @@ void WebUIToolbarWebView::OnPageInitialized() {
 }
 
 void WebUIToolbarWebView::InvokePinnedToolbarAction(
+    toolbar_ui_api::mojom::PinnedToolbarAction action_id,
+    bool is_pointer_interaction) {
+  pinned_toolbar_actions_.Invoke(action_id, is_pointer_interaction);
+}
+
+void WebUIToolbarWebView::OnPinnedToolbarActionPointerDown(
     toolbar_ui_api::mojom::PinnedToolbarAction action_id) {
-  pinned_toolbar_actions_.Invoke(action_id);
+  pinned_toolbar_actions_.OnPointerDown(action_id);
 }
 
 void WebUIToolbarWebView::MovePinnedToolbarAction(
@@ -873,8 +879,12 @@ WebUIToolbarWebView::OnOmniboxAction(
   }
 }
 
-void WebUIToolbarWebView::ShowAvatarMenu() {
-  avatar_control_.ButtonPressed(/*is_source_accelerator=*/false);
+void WebUIToolbarWebView::ShowAvatarMenu(bool is_pointer_interaction) {
+  avatar_control_.OnClicked(is_pointer_interaction);
+}
+
+void WebUIToolbarWebView::OnAvatarButtonMousePressed() {
+  avatar_control_.OnMousePressed();
 }
 
 void WebUIToolbarWebView::SetAvatarButtonHovered(bool hovered) {

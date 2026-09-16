@@ -694,6 +694,9 @@
       <message name="IDS_IOS_AUTOFILL_ADMIN_LEVEL2" desc="Title of the field of a profile address representing the administrative area level 2. A sub-division of a state, e.g. a Municipio in Brazil or Mexico. [Length: 15em] [iOS only]">
         Municipality
       </message>
+      <message name="IDS_IOS_AUTOFILL_AI_CLOSE_FIND_AND_FILL_ACCESSIBILITY_LABEL" desc="Accessibility label for the button that closes find and fill. [iOS only]">
+        Close find and fill
+      </message>
       <message name="IDS_IOS_AUTOFILL_AI_CONTEXT_MENU_PERSONAL_CONTEXT_DESCRIPTION" desc="Description text displayed at the top of the context menu for Autofill AI suggestions that are from personal context. [iOS only]">
         Suggested by Gemini. Manage enhanced autofill in settings.
       </message>
@@ -840,6 +843,11 @@
       </message>
       <message name="IDS_IOS_AUTOFILL_AI_WALLET_FETCH_FAILURE_TITLE" desc="Title of the error the user sees if they attempt to autofill information but the request fails due to network connectivity issues.">
         Trouble filling your info
+      </message>
+      <message name="IDS_IOS_AUTOFILL_AT_MEMORY_SEARCH_RESULTS_AVAILABLE_ACCESSIBILITY_ANNOUNCEMENT" is_accessibility_with_no_ui="true" desc="The accessibility announcement read by VoiceOver once the AtMemory search completed and its results are presented to the user. According to the number of available results, the string goes from singular to plural. [iOS only]">
+        {count, plural,
+           =1 {{count} result available.}
+           other {{count} results available.}}
       </message>
       <message name="IDS_IOS_AUTOFILL_AUTOCOMPLETE_OPTIONS_AVAILABLE_ACCESSIBILITY_ANNOUNCEMENT" is_accessibility_with_no_ui="true" desc="The accessibility announcement to indicate the number of options available to the user above the keyboard in relation to autocomplete. This announcement is triggered when the user enters edit mode in an autocomplete-related form field and has options available in the keyboard accessory for autofill purposes. According to the number of available options, the string goes from singular to plural. [iOS only]">
         {count, plural,
@@ -6190,10 +6198,10 @@ Handoff must also be enabled in the General section of Settings, and your device
         Use keyboard
       </message>
       <message name="IDS_IOS_PERMISSIONS_ALERT_DIALOG_BUTTON_TEXT_ALLOW_THIS_TIME" desc="Button text to allow access to permissions for the current visit only. [iOS only]">
-        Allow This Time
+        Allow Once
       </message>
       <message name="IDS_IOS_PERMISSIONS_ALERT_DIALOG_BUTTON_TEXT_ALWAYS_ALLOW" desc="Button text to always allow access to permissions for a website. [iOS only]">
-        Always Allow
+        Allow While Visiting
       </message>
       <message name="IDS_IOS_PERMISSIONS_ALERT_DIALOG_BUTTON_TEXT_DENY" desc="Button text to deny access to permissions. This should match the iOS built-in alert for permissions access.">
         Don't Allow

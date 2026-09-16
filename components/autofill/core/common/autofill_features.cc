@@ -646,6 +646,11 @@ BASE_FEATURE(kAutofillDisableAddressImport, base::FEATURE_DISABLED_BY_DEFAULT);
 // Kill switch for Autofill filling.
 BASE_FEATURE(kAutofillDisableFilling, base::FEATURE_DISABLED_BY_DEFAULT);
 
+// When enabled, always use the country name and never fill country codes. When
+// disabled, fill country codes on `autocomplete="country"`.
+BASE_FEATURE(kAutofillDisallowCountryCodeFilling,
+             base::FEATURE_DISABLED_BY_DEFAULT);
+
 // LINT.IfChange(autofill_disallow_more_hyphen_like_labels)
 // When enabled, the list of characters a label cannot exclusively consist of
 // includes more hyphen-like characters: em-dash, minus sign and fullwidth
@@ -994,6 +999,13 @@ BASE_FEATURE(kAutofillPopupUseDeleteSoon, base::FEATURE_DISABLED_BY_DEFAULT);
 // triggering events.
 // TODO(crbug.com/40281981): Remove when launched.
 BASE_FEATURE(kAutofillReplaceFormElementObserver,
+             base::FEATURE_DISABLED_BY_DEFAULT);
+
+// If enabled, AutofillPopupControllerImpl and
+// AutofillKeyboardAccessoryControllerImpl require that the frame to which the
+// suggestions are anchored has focus.
+// TODO(crbug.com/536607604): Clean up when launched.
+BASE_FEATURE(kAutofillRequireFocusInFrameForSuggestions,
              base::FEATURE_DISABLED_BY_DEFAULT);
 
 // Restricts OTP fields detection and fetching to forms that are in a frame

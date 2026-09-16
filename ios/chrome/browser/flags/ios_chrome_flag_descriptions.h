@@ -375,12 +375,10 @@ inline constexpr char kBrowsingHistoryFilterByDeviceName[] =
 inline constexpr char kBrowsingHistoryFilterByDeviceDescription[] =
     "Enables browser history filtering by device.";
 
-inline constexpr char kBuildExternalPrivacyContextName[] =
-    "Build external privacy context";
-inline constexpr char kBuildExternalPrivacyContextDescription[] =
-    "When enabled, checks if the account can be signed in on the device "
-    "according to the capabilities. This needs `can_sign_in_to_chrome` "
-    "capability to be fetched.";
+inline constexpr char kBrowsingHistorySimilarVisitsGroupingName[] =
+    "Browsing History Grouping Improvements";
+inline constexpr char kBrowsingHistorySimilarVisitsGroupingDescription[] =
+    "Enables improvements to grouping of similar browsing history.";
 
 inline constexpr char kChromeNextIaName[] = "ChromeNextIa";
 inline constexpr char kChromeNextIaDescription[] =
@@ -700,8 +698,8 @@ inline constexpr char kEnableAccountPreviewPreferredAccountFollowupName[] =
     "Enable Account Preview Preferred Account Followup";
 inline constexpr char
     kEnableAccountPreviewPreferredAccountFollowupDescription[] =
-        "Controls whether followup features for preferred account preview (new "
-        "data types, promos, and updated strings) are enabled.";
+        "Controls whether followup features for preferred account preview "
+        "(promos, and updated strings) are enabled.";
 
 inline constexpr char kEnableAccountPreviewPreferredAccountName[] =
     "Enable Account Preview Preferred Account";

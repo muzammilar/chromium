@@ -8921,6 +8921,7 @@ from previous Chrome versions.
   <int value="-1811949013" label="SameSiteByDefaultCookies:disabled"/>
   <int value="-1811394154" label="disable-webrtc-hw-vp8-encoding"/>
   <int value="-1810891359" label="SendTabToSelfManageDevicesLink:disabled"/>
+  <int value="-1810878912" label="UseRustCborParser:enabled"/>
   <int value="-1810871090" label="OpenSystemAccountSettingsDirectly:disabled"/>
   <int value="-1810354047" label="GifRecording:enabled"/>
   <int value="-1810294310" label="AndroidPaymentApps:enabled"/>
@@ -11946,6 +11947,8 @@ from previous Chrome versions.
   <int value="-881586518"
       label="UseDefaultDeadlineWhenAnimatingBounds:enabled"/>
   <int value="-881569502" label="VcRetouchInferenceBackend:disabled"/>
+  <int value="-881479383"
+      label="kBrowsingHistorySimilarVisitsGrouping:enabled"/>
   <int value="-881477103" label="PageInfoAboutThisSiteNonEn:enabled"/>
   <int value="-881447505" label="ash-disable-shelf-model-synchronization"/>
   <int value="-881054479" label="WebAssemblyStreaming:disabled"/>
@@ -12272,6 +12275,7 @@ from previous Chrome versions.
   <int value="-780646596"
       label="CustomizeChromeWallpaperSearchInspirationCard:enabled"/>
   <int value="-780566251" label="SyncAIThread:enabled"/>
+  <int value="-779952093" label="AndroidBeforeUnloadSupport:disabled"/>
   <int value="-779220222" label="WebXRLayers:disabled"/>
   <int value="-778126349" label="DownloadsLocationChange:enabled"/>
   <int value="-778098896" label="EnableAggregatedMlSearchRanking:disabled"/>
@@ -12603,6 +12607,7 @@ from previous Chrome versions.
   <int value="-681535143"
       label="UserCloudSigninRestrictionPolicyFetcher:enabled"/>
   <int value="-681434111" label="WebFeed:disabled"/>
+  <int value="-681215825" label="UseRustCborParser:disabled"/>
   <int value="-681160117" label="ChromeOSHWVBREncoding:disabled"/>
   <int value="-680978374" label="ProcessIsolationSettings:enabled"/>
   <int value="-680787130" label="ExperimentalVRFeatures:disabled"/>
@@ -15756,6 +15761,8 @@ from previous Chrome versions.
       label="AutofillEnableBuyNowPayLaterForAffirm:disabled"/>
   <int value="294194537" label="ChromeOSAmbientModeAnimation:disabled"/>
   <int value="294691532" label="PrivateStateTokensDevUI:enabled"/>
+  <int value="294773107"
+      label="kBrowsingHistorySimilarVisitsGrouping:disabled"/>
   <int value="294946885" label="WebViewThrottleBackgroundBeginFrame:disabled"/>
   <int value="295094635" label="ReadAnythingLocalSidePanel:disabled"/>
   <int value="295661985" label="video-capture-use-gpu-memory-buffer"/>
@@ -20100,6 +20107,7 @@ from previous Chrome versions.
       label="AutofillAlwaysReturnCloudTokenizedCard:enabled"/>
   <int value="1634897915" label="password-import-export:enabled"/>
   <int value="1634980726" label="VrShellExperimentalRendering:disabled"/>
+  <int value="1635410334" label="AndroidBeforeUnloadSupport:enabled"/>
   <int value="1635695770" label="CSSContainerQueries:disabled"/>
   <int value="1635755615" label="ScanAppMultiPageScan:disabled"/>
   <int value="1635809519" label="TabSharingToolbarAndroid:disabled"/>
@@ -23503,6 +23511,7 @@ Called by update_net_error_codes.py.-->
   <int value="79" label="Kagi"/>
   <int value="80" label="StarterPackAiMode"/>
   <int value="81" label="Yahoo! JAPAN"/>
+  <int value="82" label="Perplexity"/>
 </enum>
 
 <!-- LINT.ThenChange(//components/search_engines/search_engine_type.h:SearchEngineType) -->

@@ -221,6 +221,10 @@ struct UserProfileInfo {
   /// See `policy::ManagementService::IsAccountManaged()`.
   // @glic_optional
   bool is_managed;
+  // Whether the user has an AI subscription and should show the avatar gradient
+  // ring.
+  // @glic_optional
+  bool has_avatar_ring;
 };
 
 // @generate glic_api
@@ -1133,7 +1137,6 @@ enum GlicRequestEvent {
 // A single WebClientHandler will provide access to the browser for only
 // a single web client. If the webview navigates or refreshes, a new
 // WebClientHandler is created.
-// Next version: 2
 interface WebClientHandler {
   // Reports API request count metrics from the web client.
   ReportApiRequestCount(int32 request_type_id, GlicRequestEvent event);

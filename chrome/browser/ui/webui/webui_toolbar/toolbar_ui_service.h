@@ -62,6 +62,9 @@ class ToolbarUIService : public toolbar_ui_api::mojom::ToolbarUIService {
         OnPageActionChipShowingChangedCallback callback) = 0;
     virtual void OnPageInitialized() = 0;
     virtual void InvokePinnedToolbarAction(
+        toolbar_ui_api::mojom::PinnedToolbarAction action_id,
+        bool is_pointer_interaction) = 0;
+    virtual void OnPinnedToolbarActionPointerDown(
         toolbar_ui_api::mojom::PinnedToolbarAction action_id) = 0;
     virtual void OnLocationBarFocusWithinChanged(bool focused) = 0;
     virtual void MovePinnedToolbarAction(
@@ -96,7 +99,8 @@ class ToolbarUIService : public toolbar_ui_api::mojom::ToolbarUIService {
     virtual void OnToolbarDropFile(const gfx::PointF& drop_position) = 0;
     virtual base::expected<std::monostate, mojo_base::mojom::ErrorPtr>
     OnOmniboxAction(toolbar_ui_api::mojom::OmniboxActionPtr action) = 0;
-    virtual void ShowAvatarMenu() = 0;
+    virtual void ShowAvatarMenu(bool is_pointer_interaction) = 0;
+    virtual void OnAvatarButtonMousePressed() = 0;
     virtual void SetAvatarButtonHovered(bool hovered) = 0;
     virtual void SetAvatarButtonFocused(bool focused) = 0;
     virtual void SetAvatarButtonIPHPromoShowing(bool showing) = 0;
@@ -169,6 +173,9 @@ class ToolbarUIService : public toolbar_ui_api::mojom::ToolbarUIService {
       ::toolbar_ui_api::mojom::PageActionId action_id,
       OnPageActionChipShowingChangedCallback callback) override;
   void InvokePinnedToolbarAction(
+      toolbar_ui_api::mojom::PinnedToolbarAction action_id,
+      bool is_pointer_interaction) override;
+  void OnPinnedToolbarActionPointerDown(
       toolbar_ui_api::mojom::PinnedToolbarAction action_id) override;
   void OnLocationBarFocusWithinChanged(bool focused) override;
   void MovePinnedToolbarAction(
@@ -199,7 +206,9 @@ class ToolbarUIService : public toolbar_ui_api::mojom::ToolbarUIService {
   void OnHomeButtonDropUrl(const GURL& url) override;
   void OnHomeButtonDropFile(const gfx::PointF& drop_position) override;
   void OnToolbarDropFile(const gfx::PointF& drop_position) override;
-  void ShowAvatarMenu(ShowAvatarMenuCallback callback) override;
+  void ShowAvatarMenu(bool is_pointer_interaction,
+                      ShowAvatarMenuCallback callback) override;
+  void OnAvatarButtonMousePressed() override;
   void SetAvatarButtonHovered(bool hovered,
                               SetAvatarButtonHoveredCallback callback) override;
   void SetAvatarButtonFocused(bool focused,
